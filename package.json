@@ -8,7 +8,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js",
-    "build": "cd client && npm install && npm run build",
+    "build": "cd client && npm install --include=dev && npm run build",
     "dev": "concurrently -n API,CLIENT -c blue,green \"nodemon app.js\" \"npm run dev --prefix client\"",
     "check:env": "node scripts/check_env.js",
     "check:cloudinary": "node scripts/check_cloudinary_usage.js",
