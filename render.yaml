@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: perceptionx-node
+    runtime: node
+    plan: starter  # or free, starter, standard, etc.
+    buildCommand: "npm install && npm run build"
+    startCommand: "npm start"
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PYTHON_API_URL
+        value: https://prayesh007-perceptionx-python.hf.space
+      - key: MONGO_URI
+        sync: false  # Will be set manually in Render dashboard
+      - key: CLOUDINARY_CLOUD_NAME
+        sync: false
+      - key: CLOUDINARY_API_KEY
+        sync: false
+      - key: CLOUDINARY_API_SECRET
+        sync: false
+      - key: JWT_SECRET
+        sync: false
